@@ -1,18 +1,22 @@
 import * as S from './styles'
+import { InputAdornment, TextField } from '@mui/material'
 
 const Main = () => (
   <S.Wrapper>
-    <S.Logo
-      src="/img/logo.svg"
-      alt="Imagem de um átomo e React Avançado escrito ao lado."
-    />
-    <S.Title>React Avançado</S.Title>
-    <S.Description>
-      TypeScript, ReactJS, NextJS e Styled Components
-    </S.Description>
-    <S.Illustration
-      src="/img/hero-illustration.svg"
-      alt="Um desenvolvedor de frente para uma tela com código."
+    <S.Logo />
+
+    <TextField
+      id="outlined-basic"
+      variant="outlined"
+      placeholder="Search by repository name"
+      helperText="Insert the value using the format user/repo_name"
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <S.SearchIcon />
+          </InputAdornment>
+        )
+      }}
     />
   </S.Wrapper>
 )

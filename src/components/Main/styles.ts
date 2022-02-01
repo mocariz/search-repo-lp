@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import { Github } from '@styled-icons/bootstrap'
+import { Search } from '@styled-icons/boxicons-regular'
 
 export const Wrapper = styled.main`
-  background-color: #06092b;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   width: 100%;
   height: 100%;
   padding: 3rem;
@@ -10,24 +12,14 @@ export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `
 
-export const Logo = styled.img`
-  width: 25rem;
+export const Logo = styled(Github)`
+  width: 15.625rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 `
 
-export const Title = styled.h1`
-  font-size: 2.5rem;
-`
-
-export const Description = styled.h2`
-  font-size: 2rem;
-  font-weight: 400;
-`
-
-export const Illustration = styled.img`
-  margin-top: 3rem;
-  width: min(30rem, 100%);
+export const SearchIcon = styled(Search)`
+  width: 1.25rem;
 `
