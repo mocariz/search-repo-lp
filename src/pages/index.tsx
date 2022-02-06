@@ -1,5 +1,69 @@
-import Main from 'components/Main'
+import { Alert, Grid, Snackbar } from '@mui/material'
+import { useCallback, useEffect, useState } from 'react'
 
-export default function Home() {
-  return <Main />
+import Title from 'components/Title'
+import SearchField from 'components/SearchField'
+import Result from 'components/Result'
+import ProgressBar from 'components/ProgressBar'
+
+import searchRepository, { TDataResponse } from 'services/gitService'
+import * as S from './styles'
+
+const Home = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [data, setData] = useState<Partial<TDataResponse>>({})
+  const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  const search = useCallback(async () => {
+    setIsLoading(true)
+    try {
+      const result = await searchRepository(searchTerm)
+      setData(result)
+      setIsLoading(false)
+    } catch (error) {
+      setData({})
+      setError(`No data found for the repository ${searchTerm}`)
+      setIsLoading(false)
+    }
+  }, [searchTerm])
+
+  useEffect(() => {
+    if (searchTerm) {
+      search()
+    }
+  }, [searchTerm, search])
+
+  return (
+    <>
+      <ProgressBar show={isLoading} />
+      <S.Wrapper container spacing={2}>
+        <S.Block item xs={12} md={6} container>
+          <Grid item md={12} lg={10}>
+            <Title />
+          </Grid>
+          <Grid item xs={12} md={9}>
+            <SearchField onChange={setSearchTerm} />
+          </Grid>
+        </S.Block>
+
+        <S.BlockResult item xs={12} md={6}>
+          <Result data={data} />
+        </S.BlockResult>
+
+        <Snackbar
+          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          autoHideDuration={6000}
+          open={!!error}
+          onClose={() => setError('')}
+        >
+          <Alert variant="filled" severity="error">
+            {error}
+          </Alert>
+        </Snackbar>
+      </S.Wrapper>
+    </>
+  )
 }
+
+export default Home
