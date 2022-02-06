@@ -86,4 +86,30 @@ describe('<Home />', () => {
       'No data found for the repository invalid_repo'
     )
   })
+
+  it('Should reset page status when searchTerm is empty', async () => {
+    const { getByTestId, queryByTestId } = render(<Home />)
+
+    await act(async () => {
+      await fireEvent.change(getByTestId('search-input'), {
+        target: { value: 'facebook/react' }
+      })
+      jest.runAllTimers()
+    })
+
+    expect(mockGet).toBeCalledWith('facebook/react')
+    expect(mockGet).toBeCalledTimes(1)
+    expect(queryByTestId('big-logo')).toBeNull()
+
+    mockGet.mockClear()
+    await act(async () => {
+      await fireEvent.change(getByTestId('search-input'), {
+        target: { value: '' }
+      })
+      jest.runAllTimers()
+    })
+
+    expect(mockGet).toBeCalledTimes(0)
+    expect(queryByTestId('big-logo')).toBeInTheDocument()
+  })
 })

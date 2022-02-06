@@ -41,6 +41,8 @@ const Home = () => {
   useEffect(() => {
     if (searchTerm) {
       search()
+    } else {
+      updateValues({}, '', false)
     }
   }, [searchTerm, search])
 
