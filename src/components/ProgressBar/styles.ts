@@ -7,6 +7,6 @@ export const Wrapper = styled.div`
 
 export const Box = styled.div`
   text-align: right;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding-right: 0.625rem;
+  padding-top: 0.625rem;
 `
