@@ -9,6 +9,7 @@ export const Wrapper = styled(Container)`
 
 export const Block = styled(Grid)`
   margin-top: 3rem !important;
+  height: fit-content;
 
   @media ${device.laptop} {
     margin-top: 8rem !important;
