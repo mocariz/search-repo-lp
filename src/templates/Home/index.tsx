@@ -1,5 +1,8 @@
-import { Alert, Grid, Snackbar } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
+
+import Alert from '@mui/material/Alert'
+import Grid from '@mui/material/Grid'
+import Snackbar from '@mui/material/Snackbar'
 
 import Title from 'components/Title'
 import SearchField from 'components/SearchField'
@@ -44,30 +47,32 @@ const Home = () => {
   return (
     <>
       <ProgressBar show={isLoading} />
-      <S.Wrapper container spacing={2}>
-        <S.Block item xs={12} md={6} container>
-          <Grid item md={12} lg={10}>
-            <Title />
-          </Grid>
-          <Grid item xs={12} md={9}>
-            <SearchField onChange={setSearchTerm} />
-          </Grid>
-        </S.Block>
+      <S.Wrapper fixed>
+        <Grid container spacing={2}>
+          <S.Block item xs={12} md={6} container>
+            <Grid item md={12} lg={10}>
+              <Title />
+            </Grid>
+            <Grid item xs={12} md={9}>
+              <SearchField onChange={setSearchTerm} />
+            </Grid>
+          </S.Block>
 
-        <S.BlockResult item xs={12} md={6}>
-          <Result data={data} key={data.id} />
-        </S.BlockResult>
+          <S.BlockResult item xs={12} md={6}>
+            <Result data={data} key={data.id} />
+          </S.BlockResult>
 
-        <Snackbar
-          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-          autoHideDuration={5000}
-          open={!!error}
-          onClose={() => setError('')}
-        >
-          <Alert variant="filled" severity="error">
-            {error}
-          </Alert>
-        </Snackbar>
+          <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            autoHideDuration={5000}
+            open={!!error}
+            onClose={() => setError('')}
+          >
+            <Alert variant="filled" severity="error">
+              {error}
+            </Alert>
+          </Snackbar>
+        </Grid>
       </S.Wrapper>
     </>
   )

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-import { Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
 import { device } from 'styles/device'
 
-export const Wrapper = styled(Grid)`
-  width: 80%;
-  margin: auto;
+export const Wrapper = styled(Container)`
   padding-bottom: 1rem;
 `
 
