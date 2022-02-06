@@ -20,8 +20,7 @@ describe('<Title />', () => {
 
     expect(container.firstChild).toHaveStyle({
       color: '#000',
-      fontWeight: 'bold',
-      marginBottom: '1.5rem'
+      fontWeight: 'bold'
     })
   })
 })

@@ -8,10 +8,10 @@ export const Wrapper = styled(Container)`
 `
 
 export const Block = styled(Grid)`
-  margin-top: 3rem;
+  margin-top: 3rem !important;
 
   @media ${device.laptop} {
-    margin-top: 8rem;
+    margin-top: 8rem !important;
   }
 `
 
