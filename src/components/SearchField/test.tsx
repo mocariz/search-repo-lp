@@ -74,4 +74,24 @@ describe('<SearchField />', () => {
 
     expect(mockOnChange).toBeCalledWith('facebook/react')
   })
+
+  it('Should lose focus on search field when press enter key', async () => {
+    const { getByTestId } = render(<SearchField onChange={mockOnChange} />)
+
+    await act(async () => {
+      getByTestId('search-input').focus()
+    })
+
+    expect(getByTestId('search-input')).toHaveFocus()
+
+    await act(async () => {
+      fireEvent.keyPress(getByTestId('search-input'), {
+        key: 'Enter',
+        code: 13,
+        charCode: 13
+      })
+    })
+
+    expect(getByTestId('search-input')).not.toHaveFocus()
+  })
 })
