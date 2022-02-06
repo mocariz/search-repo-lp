@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo } from 'react'
+import { ChangeEvent, KeyboardEvent, useEffect, useMemo } from 'react'
 import { InputAdornment, TextField } from '@mui/material'
 import debounce from 'lodash.debounce'
 import * as S from './styles'
@@ -36,6 +36,12 @@ const SearchField = ({ onChange }: IProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const handleOnKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      event.target.blur()
+    }
+  }
+
   return (
     <TextField
       id="search"
@@ -45,6 +51,7 @@ const SearchField = ({ onChange }: IProps) => {
       fullWidth
       onChange={debouncedResults}
       inputProps={{ 'data-testid': 'search-input' }}
+      onKeyPress={handleOnKeyPress}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
