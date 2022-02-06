@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <link rel="manifest" href="/manifest.json" />
       <meta
         name="description"
-        content="A simple landing page starter to work with TypeScript, React, NextJS and Styled Components"
+        content="A simple page to search a github repository basic information"
       />
     </Head>
     <GlobalStyles />

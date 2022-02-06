@@ -1,10 +1,4 @@
-import {
-  act,
-  cleanup,
-  fireEvent,
-  queryByTestId,
-  render
-} from '@testing-library/react'
+import { act, cleanup, fireEvent, render } from '@testing-library/react'
 import { TDataResponse } from 'services/gitService'
 import Home from '.'
 

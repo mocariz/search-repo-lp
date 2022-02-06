@@ -1,4 +1,4 @@
-import { cleanup, getAllByRole, render } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 import { TDataResponse } from 'services/gitService'
 import Result from '.'
 
