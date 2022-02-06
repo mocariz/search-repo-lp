@@ -32,13 +32,15 @@ const SearchField = ({ onChange }: IProps) => {
   }
 
   const debouncedResults = useMemo(() => {
-    return debounce(handleOnChange, 300)
+    return debounce(handleOnChange, 500)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleOnKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter') {
-      event.target.blur()
+      if (event.target instanceof HTMLElement) {
+        event.target.blur()
+      }
     }
   }
 
