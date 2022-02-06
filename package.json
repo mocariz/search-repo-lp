@@ -1,8 +1,8 @@
 {
-  "name": "nextJs-boilerplate",
+  "name": "search-repo-lp",
   "version": "1.0.0",
   "private": true,
-  "repository": "git@github.com:mocariz/nextJs-boilerplate.git",
+  "repository": "git@github.com:mocariz/search-repo-lp.git",
   "author": "Monica Mota Ocariz <mota.ocariz@gmail.com>",
   "license": "MIT",
   "scripts": {

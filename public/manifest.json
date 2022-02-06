@@ -1,21 +1,21 @@
 {
-  "name": "NextJs - Boilerplate",
-  "short_name": "NextJs-Boilerplate",
+  "name": "Search a Github Repository",
+  "short_name": "Search Repository LP",
   "icons": [
-  {
-  "src": "/img/icon-192.png",
-  "type": "image/png",
-  "sizes": "192x192"
-  },
-  {
-  "src": "/img/icon-512.png",
-  "type": "image/png",
-  "sizes": "512x512"
-  }
+    {
+      "src": "/img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ],
-  "background_color": "#06092B",
-  "description": "Boilerlate utilizando Typescript, React, NextJS e Styled Components!",
+  "background_color": "#FFFFFF",
+  "description": "A simple page to search a github repository basic information",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#06092B"
+  "theme_color": "#000000"
   }
