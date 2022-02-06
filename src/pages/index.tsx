@@ -19,14 +19,21 @@ const Home = () => {
     setIsLoading(true)
     try {
       const result = await searchRepository(searchTerm)
-      setData(result)
-      setIsLoading(false)
+      updateValues(result, '', false)
     } catch (error) {
-      setData({})
-      setError(`No data found for the repository ${searchTerm}`)
-      setIsLoading(false)
+      updateValues({}, `No data found for the repository ${searchTerm}`, false)
     }
   }, [searchTerm])
+
+  const updateValues = (
+    data: Partial<TDataResponse>,
+    error: string,
+    loading: boolean
+  ) => {
+    setData(data)
+    setError(error)
+    setIsLoading(loading)
+  }
 
   useEffect(() => {
     if (searchTerm) {
@@ -48,12 +55,12 @@ const Home = () => {
         </S.Block>
 
         <S.BlockResult item xs={12} md={6}>
-          <Result data={data} />
+          <Result data={data} key={data.id} />
         </S.BlockResult>
 
         <Snackbar
           anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-          autoHideDuration={6000}
+          autoHideDuration={5000}
           open={!!error}
           onClose={() => setError('')}
         >
