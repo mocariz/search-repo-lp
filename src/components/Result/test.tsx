@@ -49,6 +49,6 @@ describe('<Result />', () => {
     expect(getByText(mockData.full_name)).toBeInTheDocument()
     expect(getByText(mockData.description)).toBeInTheDocument()
     expect(getAllByRole('link')[0]).toHaveAttribute('href', mockData.homepage)
-    expect(getByText('go to repo')).toHaveAttribute('href', mockData.homepage)
+    expect(getByText('go to repo')).toHaveAttribute('href', mockData.html_url)
   })
 })

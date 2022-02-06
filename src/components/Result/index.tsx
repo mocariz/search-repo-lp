@@ -51,7 +51,7 @@ const Component = ({ data }: IProps) => {
           <Button
             component={MuiLink}
             variant="contained"
-            href={data.homepage}
+            href={data.html_url}
             target="_blank"
             rel="noopener"
           >
