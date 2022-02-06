@@ -5,6 +5,7 @@ import { device } from 'styles/device'
 export const Wrapper = styled(Grid)`
   width: 80%;
   margin: auto;
+  padding-bottom: 1rem;
 `
 
 export const Block = styled(Grid)`

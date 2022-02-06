@@ -4,6 +4,7 @@ import { GitRepoForked } from '@styled-icons/boxicons-regular'
 import { Star, Eye } from '@styled-icons/bootstrap'
 
 import MuiLink from '@mui/material/Link'
+import Button from '@mui/material/Button'
 
 import Badge from 'components/Badge'
 import Link from 'components/Link'
@@ -20,7 +21,7 @@ const Component = ({ data }: IProps) => {
 
   return (
     <>
-      <S.Logo size={100} />
+      <S.Logo withResult />
       <S.Card>
         <S.Wrapper>
           <S.Box>
@@ -46,14 +47,16 @@ const Component = ({ data }: IProps) => {
 
         <Link url={data.homepage} />
 
-        <S.RepoButton
-          component={MuiLink}
-          variant="contained"
-          href={data.homepage}
-          target="_blank"
-          rel="noopener"
-        >
-          go to repo
+        <S.RepoButton>
+          <Button
+            component={MuiLink}
+            variant="contained"
+            href={data.homepage}
+            target="_blank"
+            rel="noopener"
+          >
+            go to repo
+          </Button>
         </S.RepoButton>
       </S.Card>
     </>
