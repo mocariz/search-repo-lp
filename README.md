@@ -1,8 +1,10 @@
 
-# nextJs-boilerplate
+# Search a Github Repository
 
-This is a [Next.js](https://nextjs.org/) boilerplate to be used in a course called [React Avançado](https://reactavancado.com.br/).
-![ci](https://github.com/React-Avancado/boilerplate/workflows/ci/badge.svg)
+This is a Single Page Application(SPA) create with [Next.js](https://nextjs.org/).
+The goal is to present a text input to search a GitHub repository using [GitHub Rest API](https://docs.github.com/en/rest/reference/repos#get-a-repository).
+
+> [Figma Prototype](https://www.figma.com/proto/9UWlovQEv1wjqaulHKuUOq/find-repo?node-id=15%3A20&scaling=min-zoom&page-id=15%3A19)
 ## What is inside?
 
 This project uses lot of stuff as:
@@ -10,20 +12,13 @@ This project uses lot of stuff as:
 - [TypeScript](https://www.typescriptlang.org/)
 - [NextJS](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
+- [Material UI](https://mui.com/pt/)
 - [Jest](https://jestjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
 
-
-## Create new project using the boilerplate
-
-To create a new project using this boilerplate run the command bellow:
-
-```bash
- yarn create next-app -e https://github.com/mocariz/nextJs-boilerplate
-```
 
 ## Getting Started
 
@@ -54,9 +49,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
